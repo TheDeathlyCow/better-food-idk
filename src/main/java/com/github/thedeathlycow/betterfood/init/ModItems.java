@@ -7,4 +7,5 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(Main.MODID)
 public class ModItems {
     public static final Item GREEN_APPLE = null;
+    public static final Item APPLE_PIE = null;
 }

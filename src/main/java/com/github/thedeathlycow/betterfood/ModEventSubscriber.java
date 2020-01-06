@@ -16,8 +16,7 @@ public final class ModEventSubscriber {
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                setup(new Item(new Item.Properties().group(ItemGroup.FOOD).food(Foods.APPLE)),
-                        "green_apple")
+                setup(new Item(new Item.Properties().group(ItemGroup.FOOD).food(Foods.APPLE)), "green_apple")
         );
     }
 
