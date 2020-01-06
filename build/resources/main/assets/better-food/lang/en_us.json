@@ -1,4 +1,6 @@
 {
 	"item.better-food.green_apple": "Green Apple",
+	"item.better-food.apple_pie": "Apple Pie",
+	"block.better-food.salt": "Salt Deposit",
 	"itemGroup.better-food": "Better Food"
 }

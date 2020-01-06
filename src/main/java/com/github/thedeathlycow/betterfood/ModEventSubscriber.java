@@ -1,32 +1,23 @@
 package com.github.thedeathlycow.betterfood;
 
-import com.github.thedeathlycow.betterfood.init.ModItemGroups;
-import net.minecraft.item.Foods;
+import com.github.thedeathlycow.betterfood.init.ModBlocks;
+import com.github.thedeathlycow.betterfood.init.ModItems;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @EventBusSubscriber(modid = Main.MODID, bus = EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber {
 
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(
-                setup(new Item(new Item.Properties().group(ItemGroup.FOOD).food(Foods.APPLE)), "green_apple")
-        );
+        event.getRegistry().registerAll(ModItems.ITEMS);
     }
 
-    public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
-        return setup(entry, new ResourceLocation(Main.MODID, name));
+    @SubscribeEvent
+    public static void onRegisterBlocks(RegistryEvent.Register<Block> event) {
+        event.getRegistry().registerAll(ModBlocks.BLOCKS);
     }
-
-    public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final ResourceLocation registryName) {
-        entry.setRegistryName(registryName);
-        return entry;
-    }
-
 }
